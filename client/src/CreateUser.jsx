@@ -12,7 +12,11 @@ export default function CreateUser() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/createUser", { name, email, age })
+      .post("https://curd-production-0769.up.railway.app/createUser", {
+        name,
+        email,
+        age,
+      })
       .then((result) => {
         console.log(result);
         navigate("/");
