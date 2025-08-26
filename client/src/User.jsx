@@ -7,7 +7,7 @@ export default function User() {
 
   useEffect(() => {
     axios
-      .get("https://curd-production-0769.up.railway.app/")
+      .get("https://curd-production-0769.up.railway.app")
       .then((result) => {
         console.log("Response from backend:", result.data);
         setUsers(result.data);
