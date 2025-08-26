@@ -2,10 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const User = require("./models/User");
+const dotenv = require("dotenv");
 const app = express();
 // middlewares
 app.use(cors());
 app.use(express.json());
+dotenv.config();
 
 mongoose
   .connect("mongodb://localhost:27017/CRUD")
@@ -48,4 +50,5 @@ app.delete("/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.listen(8000, () => console.log("Server started at port 8000"));
+const port = process.env.port || 8000;
+app.listen(port, () => console.log(`Server started at port ${port}`));
