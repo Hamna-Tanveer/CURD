@@ -5,7 +5,7 @@ const User = require("./models/User");
 const dotenv = require("dotenv");
 const app = express();
 // middlewares
-app.use(cors());
+app.use(cors({ origin: "https://curd-xi.vercel.app/" }));
 app.use(express.json());
 dotenv.config();
 

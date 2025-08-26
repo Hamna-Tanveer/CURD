@@ -7,7 +7,7 @@ export default function User() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000")
+      .get("https://curd-production-0769.up.railway.app/")
       .then((result) => {
         console.log("Response from backend:", result.data);
         setUsers(result.data);
@@ -18,7 +18,7 @@ export default function User() {
   // on Delete
   const deleteHandler = (id) => {
     axios
-      .delete(`http://localhost:8000/${id}`)
+      .delete(`https://curd-production-0769.up.railway.app/${id}`)
       .then((user) => {
         console.log(user);
         // to reload the page

@@ -10,7 +10,7 @@ export default function UpdateUser() {
   const [age, setAge] = useState();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/update/" + id)
+      .get("https://curd-production-0769.up.railway.app/update/" + id)
       .then((result) => {
         console.log("Response from backend:", result.data);
         setName(result.data.name);
@@ -23,7 +23,11 @@ export default function UpdateUser() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .patch("http://localhost:8000/update/" + id, { name, email, age })
+      .patch("https://curd-production-0769.up.railway.app/update/" + id, {
+        name,
+        email,
+        age,
+      })
       .then((result) => {
         console.log(result);
         navigate("/");
